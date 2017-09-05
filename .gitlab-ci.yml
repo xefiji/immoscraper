@@ -1,2 +1,12 @@
+stages:
+    - deploy
+
+
+ver:
+    stage: deploy
+    script:
+        - python -V
+
+
 before_script:
     - apt-get update
