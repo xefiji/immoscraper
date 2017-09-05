@@ -9,6 +9,7 @@ from sqlalchemy import exc, select
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
+# Test comment
 
 class ProductPipeline(object):
 	# TODO: what about http://adresse.data.gouv.fr/api/ ???
