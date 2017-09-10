@@ -9,10 +9,8 @@ ver:
     script:
         - python -V
         - pwd
-        - who
+        - ls -la      
 
 
 before_script:
     - apt-get update
-    - pwd
-    - who
