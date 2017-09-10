@@ -1,4 +1,4 @@
-image: debian:latest
+image: python:latest
 
 stages:
     - deploy
@@ -8,7 +8,11 @@ ver:
     stage: deploy
     script:
         - python -V
+        - pwd
+        - who
 
 
 before_script:
     - apt-get update
+    - pwd
+    - who
