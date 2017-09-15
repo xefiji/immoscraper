@@ -146,7 +146,7 @@ class LbcSpider(scrapy.Spider):
 		for maison in res:
 			maison_data = maison.__dict__						
 			maison_row = "<tr style='background-color: #42f4a4'>" if maison_data['version'] != '1' else "<tr>"
-			img = "<img width='250' alt='image' src='http:" + maison_data['img'] + "'/>" if maison_data['img'] is not None else "-" 
+			img = "<img width='250' alt='image' src='https:" + maison_data['img'] + "'/>" if maison_data['img'] is not None else "-" 
 			maison_row += "<td>" + img + "</td>"
 			name = "<a href='http:" + (maison_data['href'] if maison_data['href'] is not None else "#") + "'>" + unidecode(maison_data['name']) + "</a>" if maison_data['name'] is not None else "-"
 			maison_row += "<td>" + name + "</td>"
