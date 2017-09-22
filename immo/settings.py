@@ -21,7 +21,7 @@ ITEM_PIPELINES = {
 MAIL_FROM = "xefiji@fxechappe.fr"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'immo (+http://www.yourdomain.com)'
+# USER_AGENT = 'immo (+http://www.yourdomain.com)'
 
 LOG_LEVEL = "INFO"
 
@@ -55,11 +55,8 @@ COOKIES_ENABLED = False
 # API_SCRAPOXY_PASSWORD = 'glopglop'
 
 # DOWNLOADER_MIDDLEWARES = {
-    # 'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
-    # 'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
-    # 'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
-    # 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+# 'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
+# 'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
+# 'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
+# 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
 # }
-
-
-
