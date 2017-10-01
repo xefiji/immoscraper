@@ -4,13 +4,13 @@ stages:
     - deploy
 
 
-ver:
+deploy:
     stage: deploy
     script:
         - python -V
         - pwd
-        - ls -la      
+        - ls -la
 
 
 before_script:
-    - apt-get update
+    #- apt-get update
