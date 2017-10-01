@@ -10,7 +10,8 @@ deploy:
         - python -V
         - pwd
         - ls -la
+        - docker cp * /home/xefiji/builds/
 
 
-before_script:
+#before_script:
     #- apt-get update
