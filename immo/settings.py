@@ -42,21 +42,23 @@ COOKIES_ENABLED = False
 # DigitalOcean key:
 # 99e2e886af6f4f26a7ab0fa28ab3e5988cc34c7277013303172924573c0cd6f6
 
-# CONCURRENT_REQUESTS_PER_DOMAIN = 1
+CONCURRENT_REQUESTS_PER_DOMAIN = 1
 
-# RETRY_TIMES = 0
+RETRY_TIMES = 0
 
 # PROXY
-# PROXY = 'http://127.0.0.1:8888/?noconnect'
+PROXY = 'http://127.0.0.1:8888/?noconnect'
+
+#WAIT_FOR_SCALE = 30
 
 # SCRAPOXY
-# API_SCRAPOXY = 'http://127.0.0.1:8889/api'
+API_SCRAPOXY = 'http://127.0.0.1:8889/api'
 
-# API_SCRAPOXY_PASSWORD = 'glopglop'
+API_SCRAPOXY_PASSWORD = 'glopglop'
 
-# DOWNLOADER_MIDDLEWARES = {
-# 'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
-# 'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
-# 'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
-# 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
-# }
+DOWNLOADER_MIDDLEWARES = {
+'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
+'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
+'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
+'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+}
