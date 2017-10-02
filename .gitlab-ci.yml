@@ -10,6 +10,9 @@ deploy:
         - python -V
         - pwd
         - ls -la
+        - useradd xefiji
+        - chown -Rf xefiji *
+
 
 before_script:
   # Install ssh-agent if not already installed, it is required by Docker.
