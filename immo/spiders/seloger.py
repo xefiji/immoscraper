@@ -143,7 +143,7 @@ class SelogerSpider(scrapy.Spider):
         query = session.query(Product) \
             .filter(Product.category == self.cat) \
             .filter(Product.alert_sent == "0") \
-            .filter(Product.cp.in_(cps)) 
+            .filter(Product.cp.in_(cps)) \
             .filter(Product.type == "Maison") \
             .filter(Product.origin == self.origin) \
             .order_by(Product.published_at.desc())
