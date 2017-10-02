@@ -143,13 +143,13 @@ class SelogerSpider(scrapy.Spider):
         query = session.query(Product) \
             .filter(Product.category == self.cat) \
             .filter(Product.alert_sent == "0") \
+            .filter(Product.cp.in_(cps)) 
             .filter(Product.type == "Maison") \
             .filter(Product.origin == self.origin) \
             .order_by(Product.published_at.desc())
 
-        # no filter on price and cps coz not sure to get them from JS template
+        # no filter on price coz not sure to get them from JS template
         # .filter(and_(Product.price >= 150000, Product.price <= 350000)) \
-        #     .filter(Product.cp.in_(cps)) \
 
         res = query.all()
         if len(res) == 0:
