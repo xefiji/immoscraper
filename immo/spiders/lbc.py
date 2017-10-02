@@ -176,7 +176,7 @@ class LbcSpider(scrapy.Spider):
 
         mail_body += "</table></html>"
         mailer = MailSender.from_settings(self.settings)
-        subject = "[{0}] Nouvelles maisons en ligne :)".format(self.origin.upper())
+        subject = "{0} - Nouvelles maisons en ligne :)".format(self.origin.upper())
         mailer.send(to=["anais.rossettom@gmail.com"], subject=subject, body=mail_body,
                     cc=["fxechappe@gmail.com"], mimetype='text/html')
         # mailer.send(to=["fxechappe@yahoo.fr"], subject="Nouvelles maisons en ligne :)", body=mail_body, cc=["fxechappe@gmail.com"], mimetype='text/html')
