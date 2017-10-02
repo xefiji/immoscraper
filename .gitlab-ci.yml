@@ -10,7 +10,7 @@ deploy:
         - python -V
         - pwd
         - ls -la
-        - chown -Rf xefiji *
+        - chown -Rf xefiji /builds/applications/labonafer/*
 
 
 before_script:
