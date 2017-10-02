@@ -10,7 +10,6 @@ deploy:
         - python -V
         - pwd
         - ls -la
-        - useradd xefiji
         - chown -Rf xefiji *
 
 
