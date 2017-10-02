@@ -19,5 +19,5 @@ before_script:
 
 after_script:
   - chown -Rf xefiji:xefiji $CURRENT_DIR/*
-  - chmod 755 $CURRENT_DIR*
+  - chmod 755 $CURRENT_DIR/*
   - rm -rf $CURRENT_DIR/.git $CURRENT_DIR/.gitlab-ci.yml
