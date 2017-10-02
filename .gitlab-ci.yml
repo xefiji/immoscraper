@@ -8,17 +8,16 @@ deploy:
     stage: deploy
     script:
         - python -V
-        - pwd
+        - echo $CURRENT_DIR
         - ls -la
 
 
 before_script:
-  # Install ssh-agent if not already installed, it is required by Docker.
-  # (change apt-get to yum if you use a CentOS-based image)
   #- which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
+  - CURRENT_DIR=$(pwd)
   - whoami
 
 after_script:
-  - chown -Rf xefiji:xefiji *
-  - chmod 755 *
-  - rm -rf .git .gitlab-ci.yml
+  - chown -Rf xefiji:xefiji $CURRENT_DIR/*
+  - chmod 755 $CURRENT_DIR*
+  - rm -rf $CURRENT_DIR/.git $CURRENT_DIR/.gitlab-ci.yml
