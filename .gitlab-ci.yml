@@ -10,7 +10,6 @@ deploy:
         - python -V
         - pwd
         - ls -la
-        - chown -Rf xefiji /builds/applications/labonafer/*
 
 
 before_script:
@@ -19,6 +18,5 @@ before_script:
   #- which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
   - whoami
 
-#after_script:
-  #- useradd xefiji
-  #- chown -Rf xefiji *
+after_script:
+  - chown -Rf xefiji:xefiji *
