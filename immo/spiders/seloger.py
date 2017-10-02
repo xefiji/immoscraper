@@ -74,11 +74,22 @@ class SelogerSpider(scrapy.Spider):
         the_date = now
         the_hour = now[-8:]
         the_geoloc = get_geoloc(response)
-        the_type = "Maison"
+        
+        try:
+            the_type = response.xpath("//h2[contains(@class, 'c-h2')]/text()").extract_first()
+            if the_type and re.match(r'.*maison.*', the_type, re.IGNORECASE) is not None:
+                the_type = 'Maison'
+            elif (the_type and re.match(r'.*appartement.*', the_type, re.IGNORECASE) is not None) or re.match(r'.*appartement.*', the_title, re.IGNORECASE) is not None:
+                the_type = 'Appartement'
+        except:
+            the_type = 'Maison'
+            pass
+
         the_surface = response.xpath('//input[@name="surface"]/@value').extract_first()
         the_desc = response.xpath('//p[@id="js-descriptifBien"]/text()').extract_first()
         the_rooms = None
         the_img = response.xpath('//img[contains(@class,"carrousel_image_visu ")]/@src').extract_first()
+        
         the_price = response.xpath('//a[@id="price"]/text()').extract_first()
         try:
             the_price = the_price.replace('\xa0', ' ').replace('\u20ac', ' ').replace(' ', '').strip()
