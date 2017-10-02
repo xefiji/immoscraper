@@ -17,6 +17,6 @@ before_script:
   #- which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )
   - whoami
 
-after_script:
+#after_script:
   #- useradd xefiji
-  - chown -Rf xefiji *
+  #- chown -Rf xefiji *
