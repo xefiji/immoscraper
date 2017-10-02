@@ -1,4 +1,4 @@
-image: python:latest
+image: xefiji:latest
 
 stages:
     - deploy
