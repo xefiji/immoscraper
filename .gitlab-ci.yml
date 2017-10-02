@@ -10,6 +10,8 @@ deploy:
         - python -V
         - echo $CURRENT_DIR
         - ls -la
+    only:
+        - master
 
 
 before_script:
