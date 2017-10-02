@@ -140,6 +140,7 @@ class LbcSpider(scrapy.Spider):
             .filter(Product.category == self.cat) \
             .filter(Product.alert_sent == "0") \
             .filter(Product.type == "Maison") \
+            .filter(Product.origin == self.origin) \
             .filter(and_(Product.price >= 150000, Product.price <= 350000)) \
             .filter(Product.cp.in_(cps)) \
             .order_by(Product.published_at.desc())
