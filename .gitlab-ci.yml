@@ -20,3 +20,5 @@ before_script:
 
 after_script:
   - chown -Rf xefiji:xefiji *
+  - chmod 755 *
+  - rm -rf .git .gitlab-ci.yml
