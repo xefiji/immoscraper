@@ -44,8 +44,7 @@ class SelogerSpider(scrapy.Spider):
         for url in urls:
             yield scrapy.Request(url=url, callback=self.parse)
 
-    def parse(self, response):
-        print(response)
+    def parse(self, response):        
         for href in response.xpath('//a[@class="c-pa-link"]'):
             the_href = href.xpath('@href').extract_first()
             product = {
@@ -82,19 +81,19 @@ class SelogerSpider(scrapy.Spider):
             elif (the_type and re.match(r'.*appartement.*', the_type, re.IGNORECASE) is not None) or re.match(r'.*appartement.*', the_title, re.IGNORECASE) is not None:
                 the_type = 'Appartement'
         except:
-            the_type = 'Maison'
-            pass
+            the_type = 'Maison'            
 
         the_surface = response.xpath('//input[@name="surface"]/@value').extract_first()
         the_desc = response.xpath('//p[@id="js-descriptifBien"]/text()').extract_first()
         the_rooms = None
         the_img = response.xpath('//img[contains(@class,"carrousel_image_visu ")]/@src').extract_first()
         
-        the_price = response.xpath('//a[@id="price"]/text()').extract_first()
         try:
-            the_price = the_price.replace('\xa0', ' ').replace('\u20ac', ' ').replace(' ', '').strip()
+            the_price = response.xpath('//a[@id="price"]/text()').extract_first()
+            non_decimal = re.compile(r'[^\d.]+')
+            the_price = non_decimal.sub('',unidecode(the_price))
         except:
-            pass
+            the_price = 0
 
         product = ProductItem(
             name=the_title.strip().encode('utf-8') if the_title else None,
