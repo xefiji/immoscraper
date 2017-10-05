@@ -47,18 +47,18 @@ CONCURRENT_REQUESTS_PER_DOMAIN = 1
 RETRY_TIMES = 0
 
 # PROXY
-PROXY = 'http://127.0.0.1:8888/?noconnect'
+# PROXY = 'http://127.0.0.1:8888/?noconnect'
 
 #WAIT_FOR_SCALE = 30
 
 # SCRAPOXY
-API_SCRAPOXY = 'http://127.0.0.1:8889/api'
+# API_SCRAPOXY = 'http://127.0.0.1:8889/api'
 
-API_SCRAPOXY_PASSWORD = 'glopglop'
+# API_SCRAPOXY_PASSWORD = 'glopglop'
 
-DOWNLOADER_MIDDLEWARES = {
-'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
-'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
-'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
-'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
-}
+# DOWNLOADER_MIDDLEWARES = {
+# 'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
+# 'scrapoxy.downloadmiddlewares.wait.WaitMiddleware': 101,
+# 'scrapoxy.downloadmiddlewares.scale.ScaleMiddleware': 102,
+# 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware': None,
+# }
