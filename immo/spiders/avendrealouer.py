@@ -185,7 +185,7 @@ class AvalSpider(scrapy.Spider):
             img = "<img width='250' alt='image' src='" + maison_data['img'] + "'/>" if maison_data[
                                                                                                  'img'] is not None else "-"
             maison_row += "<td>" + img + "</td>"
-            name = "<a href='http:" + (
+            name = "<a href='" + (
             maison_data['href'] if maison_data['href'] is not None else "#") + "'>" + unidecode(
                 maison_data['name']) + "</a>" if maison_data['name'] is not None else "-"
             maison_row += "<td>" + name + "</td>"
