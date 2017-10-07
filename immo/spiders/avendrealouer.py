@@ -128,9 +128,7 @@ class AvalSpider(scrapy.Spider):
             type=the_type.strip().encode('utf-8') if the_type else None,
             version=1,
             alert_sent=0
-        )
-
-        print(product)
+        )        
         yield (product)
 
     def closed(self, reason):
