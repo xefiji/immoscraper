@@ -1,8 +1,9 @@
-# -*- coding: utf-8 -*-
+    # -*- coding: utf-8 -*-
 import requests
 from product import Product, db_connect, create_product_table
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import exc, select
+import re
 
 
 # Define your item pipelines here
@@ -40,7 +41,7 @@ class ProductPipeline(object):
             spider.crawler.stats.inc_value('products_created')
         except exc.IntegrityError as e:
             session.rollback()
-            s = select([Product]).where(Product.ref == item.get('ref')).order_by(Product.created_at.desc()).limit(1)
+            s = select([Product]).where(Product.ref == item.get('ref')).where(Product.origin == item.get('origin')).order_by(Product.created_at.desc()).limit(1)
             for row in session.execute(s):
                 if row.price is not None and item.get('price') is not None:
                     if int(row.price) != int(item.get('price')):
