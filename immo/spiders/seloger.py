@@ -19,7 +19,7 @@ class SelogerSpider(scrapy.Spider):
     name = "seloger"
     cat = "ventes_immobilieres"
     origin = "seloger"
-    base_url = "http://www.seloger.com/list.htm?cp=38&idtt=2&idtypebien=1,2&naturebien=1,2,4&pxmax=300000&tri=initial&LISTING-LISTpg="
+    base_url = "http://www.seloger.com/list.htm?cp=38&idtt=2&idtypebien=1,2&naturebien=1,2,4&tri=initial&LISTING-LISTpg="
     pushbullet_api_key = "o.d2sZqMiZoFDv4R2ZkER1wkc6kLdVDRsM"
     engine = db_connect()
 
