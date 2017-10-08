@@ -73,6 +73,11 @@ class AvalSpider(scrapy.Spider):
         def get_geoloc(elt):
             if not elt:
                 return None
+            try:
+                carret_pos = elt.index('<')
+                elt = elt[:carret_pos]
+            except:
+                pass
             the_city = elt[:-7].strip()
             the_cp = elt[-7:].strip().replace(')','').replace('(', '')
             return {'city': the_city, 'cp': the_cp}
