@@ -122,7 +122,7 @@ class LbcSpider(scrapy.Spider):
         stats = "{0} CREATED | {1} UPDATED | {2} FAILED | {3} TOTAL".format(
             self.crawler.stats.get_value('products_created'), self.crawler.stats.get_value('products_updated'),
             self.crawler.stats.get_value('products_failed'), total_count)
-        self.send_notif(stats)
+        # self.send_notif(stats)
         # send email
         self.send_mail()
         self.logger.info("TOTAL: {0} PRODUCTS".format(total_count))
