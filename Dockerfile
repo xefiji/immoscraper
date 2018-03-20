@@ -1,3 +1,3 @@
 FROM python:latest
-USER xefiji
+USER [USER]
 RUN whoami

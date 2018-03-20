@@ -8,8 +8,8 @@ import requests, time, sys
 class Normalizer(object):
 
 	active_api = "google" # | mapquest. (todo: what about http://adresse.data.gouv.fr/api/ ?)
-	mapquest_apikey = "YSblqC5fOqO8aRkzrFFpiAD2G28gOrP3"
-	google_apikey = "AIzaSyDcwlrL0HfNstNcEIY3BBaL6oWjJEtrrgk"
+	mapquest_apikey = "[KEYHERE]"
+	google_apikey = "[KEYHERE]"
 
 	def __init__(self):		
 		engine = db_connect()		

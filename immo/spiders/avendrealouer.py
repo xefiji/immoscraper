@@ -21,7 +21,7 @@ class AvalSpider(scrapy.Spider):
     origin = "avendrealouer"
     domain = "https://www.avendrealouer.fr"
     base_url = "https://www.avendrealouer.fr/recherche.html?sortPropertyName=ReleaseDate&sortDirection=Descending&searchTypeID=1&typeGroupCategoryID=1&transactionId=1&localityIds=3-38&typeGroupIds=1,2,5,9,10,11,12&pageIndex="
-    pushbullet_api_key = "o.d2sZqMiZoFDv4R2ZkER1wkc6kLdVDRsM"
+    pushbullet_api_key = "[KEY_HERE]"
     engine = db_connect()
 
     def __init__(self, *args, **kwargs):
@@ -208,7 +208,6 @@ class AvalSpider(scrapy.Spider):
         mail_body += "</table></html>"
         mailer = MailSender.from_settings(self.settings)
         subject = "{0} - Nouvelles maisons en ligne :)".format(self.origin.upper())
-        mailer.send(to=["anais.rossettom@gmail.com"], subject=subject, body=mail_body,
-                    cc=["fxechappe@gmail.com"], mimetype='text/html')
-        # mailer.send(to=["fxechappe@yahoo.fr"], subject="Nouvelles maisons en ligne :)", body=mail_body, cc=["fxechappe@gmail.com"], mimetype='text/html')
+        mailer.send(to=["[MAIL_HERE]"], subject=subject, body=mail_body,
+                    cc=["[MAIL_HERE]"], mimetype='text/html')        
         self.logger.info("MAIL has been sent for {0} maisons".format(len(res)))

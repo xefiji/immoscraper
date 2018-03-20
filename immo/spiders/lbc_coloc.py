@@ -20,7 +20,7 @@ class LbcColocSpider(scrapy.Spider):
     cat = "colocations"
     origin = "leboncoin"
     base_url = "https://www.leboncoin.fr/colocations/offres/rhone_alpes/isere/?q=maison&o="
-    pushbullet_api_key = "o.d2sZqMiZoFDv4R2ZkER1wkc6kLdVDRsM"
+    pushbullet_api_key = "[KEY_HERE]"
     engine = db_connect()
 
     def __init__(self, *args, **kwargs):
@@ -167,7 +167,6 @@ class LbcColocSpider(scrapy.Spider):
 
         mail_body += "</table></html>"
         mailer = MailSender.from_settings(self.settings)
-        mailer.send(to=["rbu2000@yahoo.fr"], subject="Nouvelles colocs en ligne :)", body=mail_body,
-                    cc=["fxechappe@gmail.com"], mimetype='text/html')
-        # mailer.send(to=["fxechappe@yahoo.fr"], subject="Nouvelles colocs en ligne :)", body=mail_body, cc=["fxechappe@gmail.com"], mimetype='text/html')
+        mailer.send(to=["[MAIL_HERE]"], subject="Nouvelles colocs en ligne :)", body=mail_body,
+                    cc=["[MAIL_HERE]"], mimetype='text/html')        
         self.logger.info("MAIL has been sent for {0} colocs".format(len(res)))

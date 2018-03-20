@@ -18,7 +18,7 @@ ITEM_PIPELINES = {
     'immo.pipelines.ProductPipeline': 300,
 }
 
-MAIL_FROM = "xefiji@fxechappe.fr"
+MAIL_FROM = "[MAIL_HERE]"
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 # USER_AGENT = 'immo (+http://www.yourdomain.com)'
@@ -26,12 +26,12 @@ MAIL_FROM = "xefiji@fxechappe.fr"
 LOG_LEVEL = "INFO"
 
 DATABASE = {
-    'drivername': 'mysql',
-    'host': 'localhost',
-    'username': 'xefiji',
-    'password': 'glopglop',
-    'database': 'labonafer',
-    'charset': 'utf8',
+    'drivername': '',
+    'host': '',
+    'username': '',
+    'password': '',
+    'database': '',
+    'charset': '',
 }
 USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36"
 
@@ -39,8 +39,8 @@ COOKIES_ENABLED = False
 
 # SCRAPOXY SETTINGS (Avoid blacklisting)
 # scrapoxy start conf.json -d
-# DigitalOcean key:
-# 99e2e886af6f4f26a7ab0fa28ab3e5988cc34c7277013303172924573c0cd6f6
+# DigitalOcean key:[KEY_HERE]
+# 
 
 CONCURRENT_REQUESTS_PER_DOMAIN = 1
 
@@ -54,7 +54,7 @@ RETRY_TIMES = 0
 # SCRAPOXY
 # API_SCRAPOXY = 'http://127.0.0.1:8889/api'
 
-# API_SCRAPOXY_PASSWORD = 'glopglop'
+# API_SCRAPOXY_PASSWORD = '[PWD_HERE]'
 
 # DOWNLOADER_MIDDLEWARES = {
 # 'scrapoxy.downloadmiddlewares.proxy.ProxyMiddleware': 100,
